@@ -5,7 +5,7 @@ https://glorious-bassoon-4jw6jv6gxp59277qq-8080.app.github.dev/geoserver/ows?ser
 https://glorious-bassoon-4jw6jv6gxp59277qq-8080.app.github.dev/geoserver/ows?service=WFS&acceptversions=2.0.0&request=GetCapabilities
 
 #### Q3: Submit a screenshot of your updated WFS Layer Preview
-archsites.png
+screenshot: archsites.png
 
 #### Q4: What does drawing order refer to? Which layer goes on `top`, the first or the last layer in the list?
 The drawing order refers to how the layers will be rendered. The 'top' layer will be the last layer in the list. So the bugsites will be on top of the other layers. 
@@ -24,4 +24,17 @@ Image size: Width = 256 Height = 256
 #### Q8: What is the URL of your coarse resolution sample of a WMTS url? What level does this tile refer to? Notice the differences. What are some of the fields that are unique to this url?
 https://glorious-bassoon-4jw6jv6gxp59277qq-8080.app.github.dev/geoserver/gwc/service/wmts?layer=spearfish&style=&tilematrixset=EPSG%3A4326&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix=EPSG%3A4326%3A12&TileCol=1732&TileRow=1036
 
-The URL calls to a specific tile column and tile row. 
+This tile refers to level 12. 
+Fields unique to this URL are calls to a specific tile column and tile row. 
+
+#### Q9: In the zoomed-out URL, what are the TileCol and TileRow?
+Zoomed out TileCol = 433, TileRow = 259
+
+#### Q10: In the zoomed-in URL, what are the TileCol and TileRow?
+Zoomed in: TileCol = 27752, TileRow = 16595
+
+#### Q11: Why are they so different for the same location in the map?
+The zoom levels are different, so the horizontal and vertical positions of the tile are going to be different based on the zoom level and the level of detail in the grid. 
+
+#### Q12: Is there a difference in the TileMatrix? %3A is an HTML encoding for a colon, `:`.What does the number after EPSG:4326 mean?
+Yes, the number after the colon is the zoom level. For the zoomed-in, the level is 16. For the zoomed-out, the level is 10.
